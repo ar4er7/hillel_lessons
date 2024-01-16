@@ -10,6 +10,6 @@
 # print("end")
 
 value_1 = 2000
-value_2 = 330
+value_2 = 331
 result = "A" if value_1 > value_2 else "B"
 print(result)

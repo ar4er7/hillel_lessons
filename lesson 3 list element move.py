@@ -1,4 +1,4 @@
-original_list = ['first', 'last']
+original_list = ['first', 1, 5, -344, 0, 1.5, 'last']
 
 if len(original_list)>1:
     last_symbol = original_list[-1]

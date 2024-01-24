@@ -3,7 +3,7 @@ import keyword
 
 
 edited_str_punkt = string.punctuation.replace("_", " ")
-# я удалил ниж. подчерк. из списка знаков пунктуации
+# я удалил символ "_" из стандартного списка знаков пунктуации
 
 result = True
 

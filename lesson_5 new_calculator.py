@@ -1,7 +1,9 @@
+# тепер 1
+
 is_retry = "y"
 result = 0
 
-while is_retry == "y":
+while is_retry == "y" or is_retry == "yes":
 
     is_retry = "n"
     first_symbol = float(input("enter the 1st symbol:  "))
@@ -9,7 +11,6 @@ while is_retry == "y":
 
     if operator not in ["+", "-", "/", "*"]:
         print("it's not an operator symbol ")
-        is_continue = "n"
     else:
         second_symbol = float(input("enter the 2nd symbol:  "))
 
@@ -31,4 +32,5 @@ while is_retry == "y":
         print(result)
 
 
-    is_retry = input("type y to retry: ")
+    is_retry = input("type y to retr, or any key to exit: ")
+    if is_retry == "yes": print("not 'y', but can work. lol")

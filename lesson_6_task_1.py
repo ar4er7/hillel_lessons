@@ -23,11 +23,11 @@ for man in dudes: #находим самый маленький возраст �
 
 average_age = ages_sum / len(dudes)
 
-for man in dudes: #все элементы массива с минимальным возрастом кладем в массив children
-    if man.get("age") == min_age:
+for man in dudes:
+    if man.get("age") == min_age:  #все элементы массива с минимальным возрастом кладем в массив children
         children.append(man.get("name"))
 
-    if len(man.get("name")) == max_name_length:
+    if len(man.get("name")) == max_name_length: #все элементы массива с самым длинным именем кладем в массив long_names
         long_names.append(man.get("name"))
 
 print("youngest people are: ", children)

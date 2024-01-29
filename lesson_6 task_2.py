@@ -1,16 +1,20 @@
 
 my_dict_1 = {
-    "name": "Ivan",
-    "sex": "male",
-    "eye_color": "brown",
-    "age": 30
+    # "name": "Ivan",
+    # "sex": "male",
+    # "eye_color": "brown",
+    # "age": 30
+    1: 1,
+    2: 2
     }
 
 my_dict_2 = {
-    "name": "Volksvagen",
-    "type": "sedan",
-    "color": "brown",
-    "year": 2015
+    # "name": "Volksvagen",
+    # "type": "sedan",
+    # "color": "brown",
+    # "year": 2015
+    11: 11,
+    2: 22
     }
 
 set_keys_1 = set(my_dict_1.keys()) #сэт ключей первого словаря

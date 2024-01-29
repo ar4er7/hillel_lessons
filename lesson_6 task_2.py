@@ -31,9 +31,13 @@ for pairs in only_in_1st:
 
 print("new dictionary with unic items from the 1st dict: ", my_dict_unic_1)
 
+common_dict = {}
 
+for key in common_keys:
+    if key in set_keys_1.intersection(set_keys_2):
+        common_dict[key] = [my_dict_1[key], my_dict_2[key]]
+    elif key not in set_keys_1:
+        common_dict[key] = my_dict_2[key]
+    else: common_dict[key] = my_dict_1[key]
 
-
-
-
-
+print(common_dict)

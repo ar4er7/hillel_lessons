@@ -1,3 +1,5 @@
+# я не понял, надо было ли програмно ограничить ввод возраста позитивными числами.
+# поэтому на всякий случай добавил простую проверку.
 def say_hi(name: str, age: int) -> str:
     if age >= 0:
         result = f"Hi. My name is {name} and I'm {age} years old"

@@ -1,9 +1,10 @@
 
 
 def add_one(some_list):
-    all_nums = ''
+    all_nums = ''  # string for all numbers in one row
     for number in some_list:
-        all_nums += str(number)  # made a sting with all nums
+        all_nums += str(number)  # fill a sting with all nums
+        
     added_1_int = int(all_nums) + 1  # wrapped str in int and added 1
     return [int(x) for x in str(added_1_int)]
 

@@ -3,8 +3,7 @@ def popular_words (text: str, words: list[str]):
     dict_of_usage = {}
 
     for item in words:
-        count = split_text.count(item)
-        dict_of_usage.update({item: count})
+        dict_of_usage.update({item: split_text.count(item)})
 
     return dict_of_usage
 

@@ -1,4 +1,10 @@
-difference = lambda *args: round((max(args) - min(args)), 2) if args else 0
+def difference(*args):
+    if args:
+        result = max(args) - min(args)
+        return round(result, 2)
+    return 0
+#or Lambda:
+# difference = lambda *args: round((max(args) - min(args)), 2) if args else 0
 
 assert difference(1, 2, 3) == 2, 'Test1'
 assert difference(5, -5) == 10, 'Test2'

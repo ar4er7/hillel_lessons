@@ -25,15 +25,22 @@ class Group:
     def __init__(self, number):
         self.number = number
         self.group = set()
+        self.count = 0
+        self.__capacity = 10
 
     def add_student(self, student):
-        self.group.add(student)
+        if self.count < self.get_capacity():
+            self.group.add(student)
+            self.count += 1
+        else:
+            raise OverCountException('too many students', self.count)
 
     def delete_student(self, last_name):
         if self.group:
             for student in self.group:
                 if last_name == student.last_name:
                     self.group.remove(student)
+                    self.count -= 1
                     break
         else:
             print('the group is empty')
@@ -44,6 +51,9 @@ class Group:
                 if last_name == student.last_name:
                     return student
         return None
+
+    def get_capacity(self):
+        return self.__capacity
 
     def __str__(self):
         all_students = ''
@@ -57,8 +67,28 @@ class Group:
         return f'Number:{self.number}\n{all_students} '
 
 
+class OverCountException(Exception):
+
+    def __init__(self, message, x):
+        super().__init__()
+        self.message = message
+        self.x = x
+
+    def get_exception_message(self):
+        return self.message
+
+
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
+st3 = Student('Female', 25, 'MonaLiza', 'Pupkin', 'AN140')
+st4 = Student('Female', 25, 'Garry', 'Petrov', 'AN115')
+st5 = Student('Female', 25, 'Andrew', 'Ivanov', 'AN141')
+st6 = Student('Female', 25, 'Petr', 'Sharikov', 'AN148')
+st7 = Student('Female', 25, 'Ignat', 'Bochkin', 'AN149')
+st8 = Student('Female', 25, 'Egor', 'Kopytin', 'AN112')
+st9 = Student('Female', 25, 'Lev', 'Sgrivoy', 'AN134')
+st10 = Student('Female', 25, 'Galina', 'Blanka', 'AN167')
+st11 = Student('Female', 25, 'Nikita', 'Perviu', 'AN190')
 gr = Group('PD1')
 gr.add_student(st1)
 gr.add_student(st2)
@@ -74,3 +104,25 @@ gr.delete_student('Taylor')
 print(gr)  # Only one student
 #
 gr.delete_student('Taylor')  # No error!
+
+"""тут начинаю добавлять 10 студентов для 14го занятия"""
+
+gr.add_student(st2)
+gr.add_student(st3)
+gr.add_student(st4)
+gr.add_student(st5)
+gr.add_student(st6)
+gr.add_student(st7)
+gr.add_student(st8)
+gr.add_student(st9)
+gr.add_student(st10)
+print(gr.count)
+
+try:
+    gr.add_student(st11)
+except OverCountException as err:
+    print(err.get_exception_message())
+    print(f"should be {gr.get_capacity()}, or less")
+
+
+

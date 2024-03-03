@@ -1,4 +1,4 @@
-from hillel_lessons.lesson_14.Custom_exceptions import OverCountException
+from hillel_lessons.lesson_15.Custom_exceptions import OverCountException
 """класс группа. Основа - коллекция.
 переменная capacity - защищена"""
 

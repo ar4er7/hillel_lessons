@@ -1,4 +1,4 @@
-from hillel_lessons.lesson_14.Human import Human
+from hillel_lessons.lesson_15.Human import Human
 """класс студента. Метод __eq__ переопределен"""
 
 class Student(Human):
